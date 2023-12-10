@@ -6,7 +6,7 @@
       <h1>
         <span class="font-medium">
           Course:
-          <span class="font-bold">Mastering Nuxt</span>
+          <span class="font-bold">Mastering Nuxt 3</span>
         </span>
       </h1>
     </div>
@@ -19,9 +19,8 @@
         <!-- All the lessons and chapters listed here -->
       </div>
 
-      <div class="prose p-12 bg-red-100 rounded-md w-[65ch]">
-        <h2>Lesson</h2>
-        <p>This is a lesson</p>
+      <div class="prose p-12 bg-white rounded-md w-[65ch]">
+        <NuxtPage />
       </div>
     </div>
   </div>
