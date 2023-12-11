@@ -26,10 +26,13 @@
 
     <p>{{ lesson.text }}</p>
 
+    <!-- only use ClientOnly if you do not want the component to be rendered on the server...another way is to name the file as .client.vue -->
+    <!-- <ClientOnly> -->
     <LessonCompleteButton
       :model-value="isLessonComplete"
       @update:model-value="toggleComplete"
     />
+    <!-- </ClientOnly> -->
   </div>
 </template>
 
@@ -59,10 +62,12 @@
     title,
   });
 
-  // useState is a reactive global state manager to persist data across pages
-  const progress = useState("progress", () => {
-    return [];
-  });
+  // // useState is a reactive global state manager to persist data across pages
+  // const progress = useState("progress", () => {
+  //   return [];
+  // });
+
+  const progress = useLocalStorage("progress", []);
 
   const isLessonComplete = computed(() => {
     // check if there is a chapter array
